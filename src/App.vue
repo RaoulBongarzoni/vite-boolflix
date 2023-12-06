@@ -1,5 +1,6 @@
 <script>
 import axios from "axios"
+
 import filmCard from "./components/FilmDisplayer.vue"
 import searchBar from "./components/SimpleSearch.vue"
 import { store } from "./store.js"
