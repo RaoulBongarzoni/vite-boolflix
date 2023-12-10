@@ -4,24 +4,24 @@ export default {
     name: "SimpleCard",
     props: {
         obj: "object",
-        /* class: `fi fi-${obj.original_title}` */
 
 
-    }, /* components: {
-        class: `fi fi-${obj.original_title}`
 
-    } */
-
-
+    }
 
 }
 </script>
 
 <template>
-    <div class="card-wrapper">
-        <div>
-            <h2>{{ obj.title }}</h2>
-            <span>
+    <div>
+        <div class="card">
+
+            <div>
+
+                <h2>{{ obj.title }}</h2>
+            </div>
+            <div>
+
                 <p>{{ obj.original_title }}</p>
 
                 <span id="flag" :class="'fi fi-' + obj.original_language">
@@ -30,23 +30,15 @@ export default {
 
 
                 <p>{{ obj.vote_average }}</p>
-            </span>
 
+            </div>
         </div>
     </div>
 </template>
 
 
 <style>
-.card-wrapper {
-    background-color: #333;
-    border-radius: 10px;
-}
-
-
-
-
-#flag {
+/* #flag {
     position: relative;
 
 }
@@ -59,5 +51,5 @@ export default {
     color: orangered;
 
 
-}
+} */
 </style>
