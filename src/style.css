@@ -7,8 +7,22 @@
   text-align: center;
   height: 300px;
   width: 300px;
+
+  position: relative;
 }
 
+.poster {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+.card:hover .poster {
+  z-index: -1;
+}
 
 .card p {
   display: block;

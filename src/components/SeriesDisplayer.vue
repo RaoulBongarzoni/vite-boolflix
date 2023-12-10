@@ -1,42 +1,64 @@
 <script>
-
+import Rating from "./StarRating.vue"
+import "/node_modules/flag-icons/css/flag-icons.min.css"
 export default {
-    name: "SimpleTVCard",
+    name: "SimpleCard",
     props: {
         obj: "object",
-
-
-
+    },
+    components: {
+        Rating
     }
 
 }
 </script>
 
-
 <template>
     <div>
         <div class="card">
-            <h2>{{ obj.name }}</h2>
 
-            <p>{{ obj.original_name }}</p>
 
-            <span id="flag" :class="'fi fi-' + obj.original_language">
+            <div>
+
+                <h2>{{ obj.name }}</h2>
+            </div>
+            <div>
+
+                <p>{{ obj.original_name }}</p>
+
                 <span id="original_lang">{{ obj.original_language.toUpperCase() }}</span>
-            </span>
-
-            <!--                 <span id="flag" :class="'fi fi-' + obj.original_language">
-                    <span id="original_lang">{{ obj.original_language.toUpperCase() }}</span>
-                </span> -->
 
 
-            <p>{{ obj.vote_average }}</p>
+            </div>
+            <div>
+                <Rating :rate="obj.vote_average" />
+            </div>
+            <div class="poster">
 
-
+                <img :src="'https://image.tmdb.org/t/p/w185/' + obj.poster_path" alt="">
+            </div>
         </div>
     </div>
 </template>
 
+
 <style>
+.poster {
+
+    width: 185px;
+
+}
+
+.starActive {
+    color: orange;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+
+}
+
 /* #flag {
     position: relative;
 
